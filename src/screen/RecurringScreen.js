@@ -10,7 +10,7 @@ const RecurringScreen = ({navigation}) => {
   const onThreeWeekPress = () => {};
   const onMonthlyPress = () => {};
   const onBack = () => {
-    navigation.navigate('Service');
+    navigation.navigate('Main');
   };
 
   return (
@@ -27,7 +27,7 @@ const RecurringScreen = ({navigation}) => {
 
       <TouchableOpacity style={styles.childTwo} onPress={onBiWeekPress}>
         <View style={styles.grandChild}>
-          <Text>Active</Text>
+          <Text style={styles.activeText}>Active</Text>
         </View>
         <Text style={styles.text}>Bi - Weekly</Text>
       </TouchableOpacity>
@@ -66,7 +66,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    fontSize: 25,
+    fontSize: 22,
+    fontWeight: '400',
+    fontFamily: 'Comfortaa Light',
   },
   childTwo: {
     backgroundColor: '#65B4CE',

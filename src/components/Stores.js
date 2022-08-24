@@ -1,5 +1,19 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {theme} from '../ui';
+
+const {height, width} = Dimensions.get('window');
 
 const Stores = ({
   adress,
@@ -35,11 +49,25 @@ const Stores = ({
 
         <View style={{flexDirection: 'row', marginVertical: 5}}>
           <Image source={require('../assets/icons/Clock.png')} />
-          <Text style={{marginHorizontal: 7, color: '#fff', fontWeight: '300'}}>
+          <Text
+            style={{
+              marginTop: 4,
+              marginHorizontal: 7,
+              color: '#fff',
+              fontWeight: '300',
+              fontFamily: 'Comfortaa Light',
+            }}>
             {time}
           </Text>
           <Image source={require('../assets/icons/locationSolid.png')} />
-          <Text style={{marginHorizontal: 7, color: '#fff', fontWeight: '300'}}>
+          <Text
+            style={{
+              marginHorizontal: 7,
+              marginTop: 4,
+              color: '#fff',
+              fontWeight: '300',
+              fontFamily: 'Comfortaa Light',
+            }}>
             {distance}
           </Text>
         </View>
@@ -58,8 +86,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#08768B',
-    width: '100%',
-    height: '25%',
+    width: width / 1.07,
+    // width: wp(95),
+    height: height / 4.8,
     borderRadius: 10,
     marginTop: 20,
     paddingHorizontal: 12,
@@ -69,21 +98,26 @@ const styles = StyleSheet.create({
   },
   dealerName: {
     color: '#fff',
-    fontSize: 17,
+    fontSize: 18,
     letterSpacing: 1,
-    marginTop: 5,
+    marginTop: 10,
     marginBottom: 5,
+    fontWeight: '500',
+    fontFamily: theme.fontFamilies.regular,
   },
   callNo: {
     color: '#fff',
     marginLeft: 10,
     fontWeight: '300',
+    fontFamily: 'Comfortaa Light',
   },
   adress: {
-    flexShrink: 1,
     marginLeft: 5,
     color: '#fff',
     fontWeight: '300',
+    lineHeight: 20,
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
 });
 export default Stores;

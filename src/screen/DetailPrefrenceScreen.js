@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginVertical: 20,
     fontWeight: '400',
+    fontFamily: 'Comfortaa Light',
   },
   detergent: {
     flex: 4,
@@ -116,8 +117,10 @@ const styles = StyleSheet.create({
   },
   detergentTitle: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 17,
     fontStyle: 'italic',
+    fontWeight: 'bold',
+    fontFamily: 'Comfortaa Light',
   },
   checkBox: {
     backgroundColor: '#fff',
@@ -126,20 +129,23 @@ const styles = StyleSheet.create({
   },
   item: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 15,
     marginRight: 50,
     marginTop: 20,
     marginBottom: 15,
+    fontFamily: 'Comfortaa Light',
   },
   temperatureTitle: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 17,
     fontStyle: 'italic',
+    fontFamily: 'Comfortaa Light',
   },
   washCycleTitle: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 17,
     fontStyle: 'italic',
+    fontFamily: 'Comfortaa Light',
   },
 });
 export default DetailPrefrenceScreen;

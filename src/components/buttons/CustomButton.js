@@ -27,5 +27,8 @@ const styles = StyleSheet.create({
   btnText: {
     color: '#fff',
     fontSize: 20,
+    fontWeight: '400',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
 });

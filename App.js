@@ -24,6 +24,9 @@ import ContactScreen from './src/screen/ContactScreen';
 import FAQScreen from './src/screen/FAQScreen';
 import DrawerNavigation from './src/routes/Navigation/DrawerNavigation/DrawerNavigation';
 import IconTesting from './src/screen/IconTesting';
+import SupportChat from './src/screen/SupportChat';
+import OrderSupport from './src/screen/Order/OrderSupport';
+import ProfileInfo from './src/screen/Profile/ProfileInfo';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -322,89 +325,67 @@ const App = () => {
               },
             }}
           />
+          <Stack.Screen
+            name="SupportChat"
+            component={SupportChat}
+            options={{
+              headerShown: false,
+              title: ``,
+              headerTintColor: '#fff',
+              headerStyle: {
+                backgroundColor: color.PRIMARY,
+              },
+              headerTitleStyle: {
+                color: '#fff',
+                fontSize: 23,
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen
+            name="OrderSupport"
+            component={OrderSupport}
+            options={{
+              headerShown: false,
+              title: ``,
+              headerTintColor: '#fff',
+              headerStyle: {
+                backgroundColor: color.PRIMARY,
+              },
+              headerTitleStyle: {
+                color: '#fff',
+                fontSize: 23,
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen
+            name="ProfileInfo"
+            component={ProfileInfo}
+            options={{
+              headerShown: false,
+              title: ``,
+              headerTintColor: '#fff',
+              headerStyle: {
+                backgroundColor: color.PRIMARY,
+              },
+              headerTitleStyle: {
+                color: '#fff',
+                fontSize: 23,
+                fontWeight: 'bold',
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
+      {/* <OrderHistory /> */}
     </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: color.PRIMARY,
+    flex: 1,
   },
 });
 export default App;
-
-// const Drawer = createDrawerNavigator();
-
-// const DrawerNavigation = () => {
-//   return (
-//     <Drawer.Navigator initialRouteName="Home">
-//       <Drawer.Screen
-//         name="Preference"
-//         component={PreferenceScreen}></Drawer.Screen>
-//       <Drawer.Screen name="Home" component={ServiceScreen}></Drawer.Screen>
-//       <Drawer.Screen
-//         name="Recurring"
-//         component={RecurringScreen}></Drawer.Screen>
-//     </Drawer.Navigator>
-//   );
-// };
-
-// // <Swiper dotColor={'black'} activeDotColor={'white'}>
-// //   <LaundryScreen />
-// //   <PickUpScreen />
-// //   <DeliveryScreen />
-// // </Swiper>
-// // ? Its Working Code?
-// // import React from 'react';
-// // import {SafeAreaView, StyleSheet, View} from 'react-native';
-// // import color from './src/color/color';
-// // import {createStackNavigator} from '@react-navigation/stack';
-// // import {NavigationContainer} from '@react-navigation/native';
-// // import BubbleScreen from './src/screen/BubbleScreen';
-// // import SignupScreen from './src/screen/SignupScreen';
-// // import WellcomeScreen from './src/screen/WellcomeScreen';
-// // import LaundryScreen from './src/screen/LaundryScreen';
-
-// // const Stack = createStackNavigator();
-// // export default function App() {
-// //   return (
-// //     // <View style={styles.contzainer}>
-// //     <NavigationContainer>
-// //       <Stack.Navigator initialRouteName="BubbleScreen">
-// //         <Stack.Screen
-// //           name="BubbleScreen"
-// //           component={BubbleScreen}
-// //           options={{headerShown: false}}
-// //         />
-// //         <Stack.Screen
-// //           name="SignupScreen"
-// //           component={SignupScreen}
-// //           options={{headerShown: false}}
-// //         />
-// //         <Stack.Screen
-// //           name="WellcomeScreen"
-// //           component={WellcomeScreen}
-// //           options={{headerShown: false}}
-// //         />
-// //         <Stack.Screen
-// //           name="LaundryScreen"
-// //           component={LaundryScreen}
-// //           options={{headerShown: false}}
-// //         />
-// //       </Stack.Navigator>
-// //     </NavigationContainer>
-// //     // </View>
-// //   );
-// // }
-// // // const styles = StyleSheet.create({
-// // //   contzainer: {
-// // //     flex: 1,
-// // //     justifyContent: 'center',
-// // //     // alignItems: 'center',
-// // //     backgroundColor: color.PRIMARY,
-// // //     paddingVertical: 50,
-// // //     paddingHorizontal: 20,
-// // //   },
-// // // });

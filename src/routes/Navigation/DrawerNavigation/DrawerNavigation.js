@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import PreferenceScreen from '../../../screen/PreferenceScreen';
 import RecurringScreen from '../../../screen/RecurringScreen';
@@ -8,7 +8,6 @@ import FAQScreen from '../../../screen/FAQScreen';
 import ContactScreen from '../../../screen/ContactScreen';
 import Signout from '../../../screen/Signout';
 import TabNavigation from '../TabNavigation';
-
 import color from '../../../color/color';
 
 const Drawer = createDrawerNavigator();

@@ -43,14 +43,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 25,
+    fontSize: 23,
     color: '#fff',
     fontWeight: '500',
     marginVertical: 30,
+    fontFamily: 'Comfortaa Light',
+    letterSpacing: 1,
   },
   description: {
-    fontSize: 18,
+    fontSize: 15,
+    lineHeight: 25,
+    textAlign: 'center',
     color: '#fff',
+    fontFamily: 'Comfortaa Light',
   },
   Skipper: {
     flexDirection: 'row',

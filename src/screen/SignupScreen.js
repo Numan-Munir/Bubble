@@ -96,18 +96,22 @@ const styles = StyleSheet.create({
   },
   description: {
     color: '#fff',
-    fontSize: 17,
+    fontSize: 15,
     marginVertical: 25,
+    lineHeight: 25,
+    fontFamily: 'Comfortaa Light',
   },
   signupText: {
     alignSelf: 'center',
     color: '#fff',
     fontSize: 17,
+    fontFamily: 'Comfortaa Light',
   },
   account: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 15,
+    fontFamily: 'Comfortaa Light',
   },
   signin: {
     color: '#65B4CE',

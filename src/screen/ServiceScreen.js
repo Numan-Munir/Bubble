@@ -10,7 +10,24 @@ import {
 } from 'react-native';
 import React from 'react';
 import color from '../color/color';
-import {Icon} from 'react-native-elements/dist/icons/Icon';
+import {theme} from '../ui';
+import styled from 'styled-components/native';
+import {Spacer} from '../components';
+
+const MainContainer = styled.ScrollView({
+  flex: 1,
+  paddingBottom: 50,
+  width: '100%',
+  height: '100%',
+});
+
+const BackGround = styled.ImageBackground({
+  flex: 1,
+  height: 450,
+  width: 400,
+  left: 0,
+  top: -5,
+});
 
 const ServiceScreen = ({navigation}) => {
   const onMenuPress = () => {
@@ -18,9 +35,8 @@ const ServiceScreen = ({navigation}) => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <ImageBackground
-        style={styles.image}
+    <MainContainer>
+      <BackGround
         source={require('../assets/icons/Map.png')}
         resizeMode="contain">
         <View
@@ -45,10 +61,14 @@ const ServiceScreen = ({navigation}) => {
               width: 330,
               backgroundColor: '#fff',
               borderRadius: 10,
+              shadowColor: '#000',
+              shadowOffset: {width: -3, height: 3},
+              shadowOpacity: 0.1,
+              shadowRadius: 5,
             }}>
             <TextInput
               style={styles.searchLoc}
-              placeholder="1465 5th Avenue APt 5C"
+              placeholder={'1465 5th Avenue APt 5C'}
             />
             <TouchableOpacity>
               <Image
@@ -58,34 +78,35 @@ const ServiceScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
-      </ImageBackground>
+      </BackGround>
 
       <View style={styles.main}>
-        <View style={styles.model}></View>
-
+        <Spacer.Column numberOfSpaces={5} />
         <Text style={styles.chooseText}>Choose your service</Text>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
+            flex: 1,
           }}>
           <TouchableOpacity style={styles.DropOff}>
             <Image source={require('../assets/icons/Location.png')} />
 
             <Text style={styles.ServiceText}>Drop off</Text>
           </TouchableOpacity>
+          <Spacer.Row numberOfSpaces={5} />
 
           <TouchableOpacity style={styles.pickUp}>
-            {/* <Image
+            <Image
               style={styles.Bike}
               source={require('../assets/icons/Bike.png')}
-            /> */}
+            />
             <Text style={styles.ServiceText}>Pick up / Delivery</Text>
           </TouchableOpacity>
         </View>
       </View>
-    </ScrollView>
+    </MainContainer>
   );
 };
 
@@ -97,14 +118,17 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   image: {
+    flex: 1,
     height: 450,
     width: 400,
     left: 0,
     top: -5,
   },
   main: {
+    flex: 1,
     backgroundColor: color.PRIMARY,
-    height: 400,
+    height: 200,
+    bottom: -35,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
@@ -116,9 +140,10 @@ const styles = StyleSheet.create({
   },
   chooseText: {
     color: '#fff',
+    // fontFamily: theme.fontFamilies.heading,
+    fontFamily: 'Comfortaa Light',
     fontSize: 18,
-    position: 'absolute',
-    top: 30,
+
     alignSelf: 'center',
   },
   DropOff: {
@@ -129,8 +154,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#fff',
     marginHorizontal: 5,
-    paddingHorizontal: 25,
-    paddingVertical: 20,
+    // paddingHorizontal: 25,
+    // paddingVertical: 20,
     borderRadius: 10,
     flexDirection: 'row',
   },
@@ -141,14 +166,14 @@ const styles = StyleSheet.create({
     height: 60,
     borderWidth: 1,
     borderColor: '#fff',
-    marginHorizontal: 5,
     borderRadius: 10,
     flexDirection: 'row',
   },
   ServiceText: {
     color: '#fff',
-    fontSize: 17,
+    fontSize: 15,
     marginLeft: 10,
+    fontFamily: 'Comfortaa Light',
   },
   Bike: {
     height: 18,
@@ -157,6 +182,7 @@ const styles = StyleSheet.create({
   searchLoc: {
     paddingVertical: 14,
     paddingHorizontal: 15,
+    fontFamily: 'Comfortaa Light',
   },
 });
 export default ServiceScreen;

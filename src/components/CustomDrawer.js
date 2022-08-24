@@ -5,7 +5,7 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import color from '../color/color';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+// import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const CustomDrawer = props => {
   return (

@@ -10,6 +10,12 @@ const VerificationScreen = ({navigation}) => {
 
   // Functions
 
+  // const onFocus = focused => {
+  //   {
+  //     focused ? {borderColor: '#ABE9FE'} : null;
+  //   }
+  // };
+
   const onResend = () => {
     alert('Code Resend');
   };
@@ -19,7 +25,6 @@ const VerificationScreen = ({navigation}) => {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.titleText}> Verification</Text>
       <Text style={styles.description}>
         We’ve texted you with a code to verify your phone number
       </Text>
@@ -30,10 +35,10 @@ const VerificationScreen = ({navigation}) => {
           justifyContent: 'center',
           marginVertical: 40,
         }}>
-        <TextInput style={styles.code} />
-        <TextInput style={styles.code} />
-        <TextInput style={styles.code} />
-        <TextInput style={styles.code} />
+        <TextInput style={styles.code} placeholder="_" maxLength={1} />
+        <TextInput style={styles.code} placeholder="_" maxLength={1} />
+        <TextInput style={styles.code} placeholder="_" maxLength={1} />
+        <TextInput style={styles.code} placeholder="_" maxLength={1} />
       </View>
 
       <CustomButton title={'Continue'} onPress={onBtnPress} />
@@ -54,41 +59,34 @@ const styles = StyleSheet.create({
     backgroundColor: color.PRIMARY,
     paddingHorizontal: 20,
   },
-  titleText: {
-    marginBottom: 40,
-    marginTop: 10,
-    marginLeft: 30,
-    fontSize: 23,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
   description: {
     color: '#fff',
     fontSize: 17,
     marginVertical: 25,
-  },
-  signupText: {
-    alignSelf: 'center',
-    color: '#fff',
-    fontSize: 17,
+    marginTop: 45,
+    fontFamily: 'Comfortaa Light',
   },
   account: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 15,
     marginTop: 10,
+    fontFamily: 'Comfortaa Light',
   },
   signin: {
     color: '#ABE9FE',
     alignSelf: 'center',
     marginTop: 20,
+    fontFamily: 'Comfortaa Light',
   },
   code: {
-    padding: 30,
-    width: 10,
-    height: 10,
+    paddingHorizontal: 31,
+    paddingVertical: 23,
     borderRadius: 50,
+    fontSize: 20,
     backgroundColor: '#08758B',
-    marginHorizontal: 17,
+    marginHorizontal: 5,
+    fontFamily: 'Comfortaa Light',
+    color: '#fff',
   },
 });

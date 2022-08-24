@@ -49,6 +49,7 @@ const BiWeekly = ({navigation}) => {
         MobileNo={'646-879-09876'}
         dealerName={'Thiam’s Laundromat'}
         rate={'(4.5)'}
+        store={require('../assets/images/storeImage.png')}
       />
       <Text style={styles.schedule}>Your next upcoming schedule:</Text>
 
@@ -100,6 +101,8 @@ const styles = StyleSheet.create({
     fontSize: 23,
     color: '#fff',
     marginRight: 4,
+    fontFamily: 'Comfortaa Light',
+    fontWeight: '400',
   },
 
   schedule: {
@@ -107,6 +110,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     alignSelf: 'flex-start',
     color: '#fff',
+    fontFamily: 'Comfortaa Light',
   },
   scheduleView: {
     flexDirection: 'row',
@@ -124,8 +128,11 @@ const styles = StyleSheet.create({
   },
   pickTitle: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: '500',
+    letterSpacing: 1,
     marginBottom: 5,
+    fontFamily: 'Comfortaa Light',
   },
   pickD: {
     color: '#fff',
@@ -133,6 +140,7 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     fontSize: 15,
     alignSelf: 'flex-start',
+    fontFamily: 'Comfortaa Light',
   },
   cancelBtn: {
     width: 350,

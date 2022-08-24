@@ -6,7 +6,7 @@ import {Icon} from 'react-native-elements';
 
 const SettingScreen = ({navigation}) => {
   const onBack = () => {
-    navigation.navigate('Service');
+    navigation.navigate('Main');
   };
   return (
     <View style={styles.container}>
@@ -47,8 +47,22 @@ const SettingScreen = ({navigation}) => {
               justifyContent: 'space-between',
               marginTop: 40,
             }}>
-            <Text style={{color: '#fff'}}>1 mi</Text>
-            <Text style={{color: '#fff'}}>5 mi</Text>
+            <Text
+              style={{
+                color: '#fff',
+                marginTop: 5,
+                fontFamily: 'Comfortaa Light',
+              }}>
+              1 mi
+            </Text>
+            <Text
+              style={{
+                color: '#fff',
+                marginTop: 5,
+                fontFamily: 'Comfortaa Light',
+              }}>
+              5 mi
+            </Text>
           </View>
         </Slider>
         {/* <View
@@ -82,19 +96,25 @@ const styles = StyleSheet.create({
   },
   languageTitle: {
     color: '#fff',
-    fontSize: 21,
-    fontStyle: 'italic',
+    fontSize: 20,
     marginBottom: 30,
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
   notifTitle: {
     color: '#fff',
     fontSize: 21,
-    fontStyle: 'italic',
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
   mileTitle: {
     color: '#fff',
     fontSize: 21,
-    fontStyle: 'italic',
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
   language: {
     height: '20%',

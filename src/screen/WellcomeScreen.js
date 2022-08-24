@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
+    paddingHorizontal: 20,
     backgroundColor: color.PRIMARY,
   },
   titleContainer: {
@@ -69,6 +70,10 @@ const styles = StyleSheet.create({
   },
   discreption: {
     color: '#fff',
+    fontFamily: 'Comfortaa Light',
+    fontSize: 13,
+    lineHeight: 20,
+    textAlign: 'center',
   },
 
   userContainer: {
@@ -91,6 +96,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   userDescription: {
+    fontFamily: 'Comfortaa Light',
     color: '#fff',
     fontSize: 15,
   },

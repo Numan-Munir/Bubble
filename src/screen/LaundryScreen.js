@@ -27,11 +27,12 @@ const LaundryScreen = ({navigation}) => {
         <Text
           style={{
             position: 'absolute',
-            fontSize: 18,
+            fontSize: 15,
             color: '#fff',
             marginLeft: 30,
             left: 10,
             bottom: 40,
+            fontFamily: 'Comfortaa Light',
           }}
           onPress={onSkipPress}>
           Skip

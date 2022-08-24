@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#08768B',
     opacity: 0.6,
     marginBottom: 20,
+    fontFamily: 'Comfortaa Light',
   },
 });
 export default CustomInput;

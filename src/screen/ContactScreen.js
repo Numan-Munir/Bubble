@@ -12,7 +12,7 @@ import CustomButton from '../components/buttons/CustomButton';
 
 const ContactScreen = ({navigation}) => {
   const onBack = () => {
-    navigation.navigate('Service');
+    navigation.navigate('Main');
   };
   const onEmailPress = () => {
     alert('Email is Here');
@@ -33,11 +33,29 @@ const ContactScreen = ({navigation}) => {
 
       <View style={{flexDirection: 'row', marginTop: 30}}>
         <View style={styles.supportDiv}>
-          <Text style={{color: '#fff', fontSize: 15}}>Support</Text>
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 15,
+              fontWeight: '500',
+              letterSpacing: 1,
+              fontFamily: 'Comfortaa Light',
+            }}>
+            Support
+          </Text>
         </View>
 
         <View>
-          <Text style={{color: '#fff', fontSize: 15}}>Feedback</Text>
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 15,
+              fontWeight: '500',
+              letterSpacing: 1,
+              fontFamily: 'Comfortaa Light',
+            }}>
+            Feedback
+          </Text>
         </View>
       </View>
 
@@ -74,9 +92,10 @@ const styles = StyleSheet.create({
   },
   issueTitle: {
     color: '#fff',
-    fontSize: 17,
-    fontStyle: 'italic',
-    fontWeight: '400',
+    fontSize: 18,
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
   supportDiv: {
     width: '35%',
@@ -95,16 +114,21 @@ const styles = StyleSheet.create({
   decInput: {
     height: 60,
     paddingHorizontal: 15,
-    fontSize: 17,
-    fontStyle: 'italic',
+    fontSize: 16,
+    fontFamily: 'Comfortaa Light',
   },
   emailTitle: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 17,
+    fontWeight: '400',
+    fontFamily: 'Comfortaa Light',
   },
   email: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 17,
+    fontWeight: '400',
+    marginLeft: 10,
+    fontFamily: 'Comfortaa Light',
   },
   btn: {
     bottom: -200,

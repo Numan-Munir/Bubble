@@ -4,7 +4,7 @@ import color from '../color/color';
 
 const FAQScreen = ({navigation}) => {
   const onBack = () => {
-    navigation.navigate('Service');
+    navigation.navigate('Main');
   };
   const onMinusPress = () => {
     alert('Minus Button is Pressed');
@@ -20,7 +20,6 @@ const FAQScreen = ({navigation}) => {
         </Text>
         <Text style={styles.title}>FAQ</Text>
       </View>
-
       <View style={styles.instrustion}>
         <View
           style={{
@@ -99,11 +98,17 @@ const styles = StyleSheet.create({
   navigateTitle: {
     color: '#484848',
     fontSize: 21,
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
   },
   description: {
     marginTop: 20,
-    fontSize: 17,
+    fontSize: 15,
+    lineHeight: 23,
+    letterSpacing: 1,
     color: '#484848CC',
+    fontFamily: 'Comfortaa Light',
   },
   services: {
     justifyContent: 'center',
@@ -120,8 +125,11 @@ const styles = StyleSheet.create({
   },
   servicesTitle: {
     color: '#fff',
-    fontSize: 17,
+    fontSize: 15,
+    letterSpacing: 1,
     marginRight: 10,
+    fontWeight: '500',
+    fontFamily: 'Comfortaa Light',
   },
 });
 export default FAQScreen;

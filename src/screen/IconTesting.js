@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Slider from '@react-native-community/slider';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const IconTesting = () => {
   return (
@@ -12,6 +13,7 @@ const IconTesting = () => {
         minimumTrackTintColor="#CFF6FF"
         maximumTrackTintColor="#65B4CE"
       />
+      <AntDesign name="home" size={20} color={'red'} />
     </View>
   );
 };
