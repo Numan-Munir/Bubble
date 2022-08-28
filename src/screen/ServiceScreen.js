@@ -3,31 +3,14 @@ import {
   Text,
   View,
   TouchableOpacity,
-  ImageBackground,
   Image,
   TextInput,
+  ImageBackground,
   ScrollView,
 } from 'react-native';
 import React from 'react';
 import color from '../color/color';
-import {theme} from '../ui';
-import styled from 'styled-components/native';
-import {Spacer} from '../components';
-
-const MainContainer = styled.ScrollView({
-  flex: 1,
-  paddingBottom: 50,
-  width: '100%',
-  height: '100%',
-});
-
-const BackGround = styled.ImageBackground({
-  flex: 1,
-  height: 450,
-  width: 400,
-  left: 0,
-  top: -5,
-});
+// import {Spacer} from '../components';
 
 const ServiceScreen = ({navigation}) => {
   const onMenuPress = () => {
@@ -35,8 +18,9 @@ const ServiceScreen = ({navigation}) => {
   };
 
   return (
-    <MainContainer>
-      <BackGround
+    <ScrollView style={styles.container}>
+      <ImageBackground
+        style={styles.mapImage}
         source={require('../assets/icons/Map.png')}
         resizeMode="contain">
         <View
@@ -78,10 +62,10 @@ const ServiceScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
-      </BackGround>
+      </ImageBackground>
 
       <View style={styles.main}>
-        <Spacer.Column numberOfSpaces={5} />
+        {/* <Spacer.Column numberOfSpaces={5} /> */}
         <Text style={styles.chooseText}>Choose your service</Text>
         <View
           style={{
@@ -95,7 +79,6 @@ const ServiceScreen = ({navigation}) => {
 
             <Text style={styles.ServiceText}>Drop off</Text>
           </TouchableOpacity>
-          <Spacer.Row numberOfSpaces={5} />
 
           <TouchableOpacity style={styles.pickUp}>
             <Image
@@ -106,7 +89,7 @@ const ServiceScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </View>
-    </MainContainer>
+    </ScrollView>
   );
 };
 
@@ -143,7 +126,7 @@ const styles = StyleSheet.create({
     // fontFamily: theme.fontFamilies.heading,
     fontFamily: 'Comfortaa Light',
     fontSize: 18,
-
+    top: 15,
     alignSelf: 'center',
   },
   DropOff: {
@@ -166,6 +149,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderWidth: 1,
     borderColor: '#fff',
+    marginHorizontal: 5,
     borderRadius: 10,
     flexDirection: 'row',
   },
@@ -183,6 +167,13 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 15,
     fontFamily: 'Comfortaa Light',
+  },
+  mapImage: {
+    flex: 1,
+    height: 450,
+    width: 400,
+    left: 0,
+    top: -5,
   },
 });
 export default ServiceScreen;

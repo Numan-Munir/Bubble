@@ -1,9 +1,10 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Linking} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/buttons/CustomButton';
 import SocialButton from '../components/SocialButton/SocialButton';
 import color from '../color/color';
+import {theme} from '../ui';
 
 const SigninScreen = ({navigation}) => {
   // Hooks
@@ -23,10 +24,10 @@ const SigninScreen = ({navigation}) => {
     navigation.navigate('Verification');
   };
   const onFacebookPress = () => {
-    alert('Facebook is Pressed');
+    Linking.openURL('https://www.facebook.com/');
   };
   const onGooglePress = () => {
-    alert('Google is Pressed');
+    Linking.openURL('https://www.google.com/');
   };
   const forgotPassword = () => {
     navigation.navigate('ResetPassword');
@@ -84,31 +85,31 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#fff',
     alignSelf: 'center',
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   description: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 17,
     marginBottom: 45,
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   signupText: {
     alignSelf: 'center',
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   account: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 15,
     marginTop: 40,
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   signin: {
     color: '#65B4CE',
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   signinTitle: {
     fontSize: 18,
@@ -123,6 +124,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 12,
     alignSelf: 'flex-end',
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
 });

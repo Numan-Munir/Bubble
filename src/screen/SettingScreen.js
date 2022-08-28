@@ -1,13 +1,24 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, Image, Switch} from 'react-native';
+import React, {useState} from 'react';
 import color from '../color/color';
 import Slider from '@react-native-community/slider';
-import {Icon} from 'react-native-elements';
 
 const SettingScreen = ({navigation}) => {
+  //    Hooks
+
+  const [isEnabled, setIsEnabled] = useState();
+  const [defaultStyle, setDefaultStyle] = useState();
+
+  // Functions
+
   const onBack = () => {
     navigation.navigate('Main');
   };
+  const toggleSwitch = () => {
+    setDefaultStyle(!defaultStyle);
+    setIsEnabled(previousState => !previousState);
+  };
+
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row'}}>
@@ -30,9 +41,35 @@ const SettingScreen = ({navigation}) => {
         </View>
       </View>
 
-      <View style={styles.notification}>
-        <Text style={styles.notifTitle}>Notifications</Text>
+      {/* Notification */}
+
+      <View style={defaultStyle ? styles.afterStyle : styles.beforeStyle}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          <Text style={styles.notifTitle}>Notifications</Text>
+          <Switch
+            trackColor={{false: '#08768B', true: '#40DD7F'}}
+            thumbColor={isEnabled ? '#fff' : '#08768B'}
+            ios_backgroundColor="#CFF6FF"
+            value={isEnabled}
+            onValueChange={toggleSwitch}
+          />
+        </View>
+        {isEnabled && (
+          <View>
+            <Text style={styles.recurStyle}>Recurring Options Reminder </Text>
+            <Text style={styles.recurStyle}> 6 Hours</Text>
+            <Text style={styles.recurStyle}>12 Hours</Text>
+            <Text style={styles.recurStyle}>24 Hours</Text>
+          </View>
+        )}
       </View>
+
+      {/* MileRadius */}
+
       <View style={styles.mileRadius}>
         <Text style={styles.mileTitle}>Mile Radius</Text>
         <Slider
@@ -124,9 +161,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 6,
   },
-  notification: {
+  beforeStyle: {
     height: '10%',
-    justifyContent: 'center',
+    backgroundColor: '#08768B',
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    borderRadius: 10,
+    marginVertical: 6,
+  },
+  afterStyle: {
+    height: '33%',
     backgroundColor: '#08768B',
     paddingHorizontal: 15,
     paddingVertical: 15,
@@ -160,6 +204,11 @@ const styles = StyleSheet.create({
   englishTitle: {
     color: '#fff',
     fontSize: 16,
+  },
+  recurStyle: {
+    color: '#fff',
+    fontFamily: 'Comfortaa Light',
+    marginTop: 25,
   },
 });
 export default SettingScreen;

@@ -26,7 +26,7 @@ const DrawerNavigation = () => {
           borderBottomWidth: 0.5,
         },
       }}
-      initialRouteName="Main"
+      initialRouteName="Settings"
       backBehavior="order">
       <Drawer.Screen name="Recurring options" component={RecurringScreen} />
       <Drawer.Screen name="Preferences" component={PreferenceScreen} />

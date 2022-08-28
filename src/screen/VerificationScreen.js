@@ -2,19 +2,12 @@ import {StyleSheet, Text, View, ScrollView, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import CustomButton from '../components/buttons/CustomButton';
 import color from '../color/color';
+import OTPInputView from '@twotalltotems/react-native-otp-input';
 
 const VerificationScreen = ({navigation}) => {
   // Hooks
 
-  const [code, setCode] = useState('');
-
-  // Functions
-
-  // const onFocus = focused => {
-  //   {
-  //     focused ? {borderColor: '#ABE9FE'} : null;
-  //   }
-  // };
+  const [otp, setOtp] = useState('');
 
   const onResend = () => {
     alert('Code Resend');
@@ -39,6 +32,11 @@ const VerificationScreen = ({navigation}) => {
         <TextInput style={styles.code} placeholder="_" maxLength={1} />
         <TextInput style={styles.code} placeholder="_" maxLength={1} />
         <TextInput style={styles.code} placeholder="_" maxLength={1} />
+        {/* <OTPInputView
+          pinCount={4}
+          onCodeFilled={code => setOtp(code)}
+          codeInputFieldStyle={styles.codeInputFieldStyle}
+        /> */}
       </View>
 
       <CustomButton title={'Continue'} onPress={onBtnPress} />
@@ -62,31 +60,38 @@ const styles = StyleSheet.create({
   description: {
     color: '#fff',
     fontSize: 17,
-    marginVertical: 25,
+    marginVertical: 30,
     marginTop: 45,
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   account: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 15,
     marginTop: 10,
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   signin: {
     color: '#ABE9FE',
     alignSelf: 'center',
     marginTop: 20,
-    fontFamily: 'Comfortaa Light',
+    // fontFamily: 'Comfortaa Light',
   },
   code: {
-    paddingHorizontal: 31,
-    paddingVertical: 23,
+    paddingVertical: 25,
+    paddingHorizontal: 30,
     borderRadius: 50,
     fontSize: 20,
     backgroundColor: '#08758B',
-    marginHorizontal: 5,
-    fontFamily: 'Comfortaa Light',
+    marginHorizontal: 7,
+    // fontFamily: 'Comfortaa Light',
     color: '#fff',
   },
+  // codeInputFieldStyle: {
+  //   width: 60,
+  //   height: 60,
+  //   fontSize: 25,
+  //   borderRadius: 50,
+  //   color: '#fff',
+  // },
 });

@@ -115,10 +115,10 @@ const animations = {
 
 export const theme = {
   fontFamilies: {
-    regular: 'Comfortaa Regular',
+    // regular: 'Comfortaa Regular',
     text: 'Comfortaa_Thin',
     bold: 'Comfortaa-Bold',
-    xbold: 'Comfortaa Light',
+    xbold: 'Comfortaa Lightr',
   },
   colors: {
     text: colors.black,

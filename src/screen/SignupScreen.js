@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Linking} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/buttons/CustomButton';
@@ -23,10 +23,10 @@ const SignupScreen = ({navigation}) => {
     navigation.navigate('Verification');
   };
   const onFacebookPress = () => {
-    alert('Facebook is Pressed');
+    Linking.openURL('https://www.facebook.com/');
   };
   const onGooglePress = () => {
-    alert('Google is Pressed');
+    Linking.openURL('https://www.google.com/');
   };
 
   return (
