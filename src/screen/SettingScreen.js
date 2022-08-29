@@ -1,4 +1,12 @@
-import {StyleSheet, Text, View, Image, Switch} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Switch,
+  TouchableHighlight,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import color from '../color/color';
 import Slider from '@react-native-community/slider';
@@ -8,6 +16,8 @@ const SettingScreen = ({navigation}) => {
 
   const [isEnabled, setIsEnabled] = useState();
   const [defaultStyle, setDefaultStyle] = useState();
+  const [show, setShow] = useState(false);
+  const [check, setCheck] = useState(false);
 
   // Functions
 
@@ -32,12 +42,29 @@ const SettingScreen = ({navigation}) => {
       <View style={styles.language}>
         <Text style={styles.languageTitle}>Language</Text>
         <View style={{flex: 1, flexDirection: 'row', marginBottom: 10}}>
-          <View style={styles.english}>
+          {/* English */}
+
+          <TouchableOpacity style={styles.english}>
             <Text style={styles.englishTitle}>English</Text>
-          </View>
-          <View style={styles.spanish}>
-            <Text style={styles.englishTitle}>Spanish</Text>
-          </View>
+
+            <TouchableOpacity
+              style={styles.outer}
+              onPress={() => setShow(pre => !pre)}>
+              {show ? <View style={styles.inner} /> : null}
+            </TouchableOpacity>
+          </TouchableOpacity>
+
+          {/* Spanish */}
+
+          <TouchableOpacity style={styles.english}>
+            <Text style={styles.englishTitle}>English</Text>
+
+            <TouchableOpacity
+              style={styles.outer}
+              onPress={() => setCheck(pre => !pre)}>
+              {check ? <View style={styles.inner} /> : null}
+            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -102,14 +129,6 @@ const SettingScreen = ({navigation}) => {
             </Text>
           </View>
         </Slider>
-        {/* <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
-          <Text>1 mi</Text>
-          <Text>5 mi</Text>
-        </View> */}
       </View>
     </View>
   );
@@ -187,10 +206,12 @@ const styles = StyleSheet.create({
   },
   english: {
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: '#128197',
     borderRadius: 8,
     marginRight: 5,
-    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 10,
   },
   spanish: {
@@ -209,6 +230,22 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Comfortaa Light',
     marginTop: 25,
+  },
+  outer: {
+    height: 15,
+    width: 15,
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: '#fff',
+    opacity: 0.8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inner: {
+    height: '60%',
+    width: '60%',
+    borderRadius: 50,
+    backgroundColor: '#fff',
   },
 });
 export default SettingScreen;

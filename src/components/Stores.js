@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 5,
     fontWeight: '500',
-    fontFamily: theme.fontFamilies.xbold,
+    fontFamily: 'Comfortaa Light',
   },
   callNo: {
     color: '#fff',

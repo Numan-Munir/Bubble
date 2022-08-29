@@ -34,7 +34,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Bubble">
+        <Stack.Navigator initialRouteName="Drawer">
           <Stack.Screen
             name="Bubble"
             component={BubbleScreen}

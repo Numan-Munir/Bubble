@@ -6,11 +6,17 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import color from '../color/color';
 import CustomButton from '../components/buttons/CustomButton';
 
 const ContactScreen = ({navigation}) => {
+  //   Hooks
+
+  const [show, setShow] = useState(false);
+  const [check, setCheck] = useState(false);
+  //   Functions
+
   const onBack = () => {
     navigation.navigate('Main');
   };
@@ -32,36 +38,33 @@ const ContactScreen = ({navigation}) => {
       <Text style={styles.issueTitle}>Any Issue? Suggestions?</Text>
 
       <View style={{flexDirection: 'row', marginTop: 30}}>
-        <View style={styles.supportDiv}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 15,
-              fontWeight: '500',
-              letterSpacing: 1,
-              fontFamily: 'Comfortaa Light',
-            }}>
-            Support
-          </Text>
-        </View>
+        {/* Support */}
 
-        <View>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 15,
-              fontWeight: '500',
-              letterSpacing: 1,
-              fontFamily: 'Comfortaa Light',
-            }}>
-            Feedback
-          </Text>
-        </View>
+        <TouchableOpacity style={styles.supportDiv}>
+          <Text style={styles.supportBtn}>Support</Text>
+          <TouchableOpacity
+            style={styles.outer}
+            onPress={() => setShow(pre => !pre)}>
+            {show ? <View style={styles.inner} /> : null}
+          </TouchableOpacity>
+        </TouchableOpacity>
+
+        {/* FeedBack */}
+
+        <TouchableOpacity style={{flexDirection: 'row'}}>
+          <Text style={styles.feedbackBtn}>Feedback</Text>
+          <TouchableOpacity
+            style={styles.outer}
+            onPress={() => setCheck(pre => !pre)}>
+            {check ? <View style={styles.inner} /> : null}
+          </TouchableOpacity>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.DecDiv}>
         <TextInput
           style={styles.decInput}
+          multiline
           placeholder={'Describe your problem or suggestion'}
         />
       </View>
@@ -99,9 +102,29 @@ const styles = StyleSheet.create({
   },
   supportDiv: {
     width: '35%',
+    flexDirection: 'row',
+  },
+  supportBtn: {
+    color: '#fff',
+    fontSize: 17,
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
+  },
+  feedbackBtn: {
+    color: '#fff',
+    fontSize: 17,
+    fontWeight: '500',
+    letterSpacing: 1,
+    fontFamily: 'Comfortaa Light',
+    marginLeft: 15,
+  },
+  feedBackRadio: {
+    backgroundColor: '#fff',
   },
   feedBackDiv: {
     width: '35%',
+    flexDirection: 'row',
   },
   DecDiv: {
     backgroundColor: '#fff',
@@ -110,9 +133,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 15,
     justifyContent: 'flex-start',
+    paddingVertical: 15,
   },
   decInput: {
     height: 60,
+    width: '100%',
     paddingHorizontal: 15,
     fontSize: 16,
     fontFamily: 'Comfortaa Light',
@@ -132,6 +157,23 @@ const styles = StyleSheet.create({
   },
   btn: {
     bottom: -200,
+  },
+  outer: {
+    height: 15,
+    width: 15,
+    borderWidth: 1,
+    borderRadius: 50,
+    borderColor: '#fff',
+    marginLeft: 10,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inner: {
+    backgroundColor: '#fff',
+    height: '60%',
+    width: '60%',
+    borderRadius: 50,
   },
 });
 export default ContactScreen;
