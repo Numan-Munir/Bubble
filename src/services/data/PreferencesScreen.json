@@ -6,9 +6,9 @@
         "distance":"10 Miles",
         "time":"9am-9pm",
         "MobileNo":"646-879-09876",
-        "dealerName":"Thiam’s Laundromat",
+        "dealerName":"Tam’s Laundromat",
         "rate":"(4.5)",
-        "storeImage":"require('../../assets/images/storeImage.png')"
+        "storeImage": "https://picsum.photos/200/300"
     },
       {
       "id": "bd7acbea-c1b1-46c2-avd5-3ad53abb28ba",
@@ -16,9 +16,9 @@
         "distance":"10 Miles",
         "time":"9am-9pm",
         "MobileNo":"646-879-09876",
-        "dealerName":"Thiam’s Laundromat",
+        "dealerName":"Tham’s Laundromat",
         "rate":"(4.5)",
-        "storeImage":"require('../assets/images/laundryRoom.png')"
+        "storeImage":  "https://picsum.photos/200/300"
     },
      {
         "id": "bd7acbea-c1b1-46c2-aer5-3ad53abb28ba",
@@ -26,9 +26,9 @@
         "distance":"10 Miles",
         "time":"9am-9pm",
         "MobileNo":"646-879-09876",
-        "dealerName":"Thiam’s Laundromat",
+        "dealerName":"Thias Laundromat",
         "rate":"(4.5)",
-        "storeImage":"require('../assets/images/storeImage.png')"
+        "storeImage": "https://picsum.photos/200/300"
     }
 
   ]

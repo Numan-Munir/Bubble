@@ -25,10 +25,11 @@ const Stores = ({
   store,
   onPress,
 }) => {
+  // alert();
   return (
     <TouchableOpacity style={styles.rateStore} onPress={onPress}>
       <View>
-        <Image style={styles.storeImage} source={store} />
+        <Image style={styles.storeImage} source={{uri: store}} />
       </View>
 
       <View style={{flex: 1}}>
@@ -94,6 +95,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   storeImage: {
+    height: 148.13,
+    width: 120,
+    borderRadius: 10,
     marginRight: 10,
   },
   dealerName: {

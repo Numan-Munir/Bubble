@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import color from '../../color/color';
@@ -15,7 +16,7 @@ const OrderSupport = ({navigation}) => {
     navigation.navigate('SupportChat');
   };
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <TouchableOpacity style={styles.navigationBtn}>
         <View style={styles.history}>
           <Text style={{color: '#fff', fontSize: 18}}>History</Text>
@@ -32,7 +33,7 @@ const OrderSupport = ({navigation}) => {
       <DealerChat onPress={onCommet} />
       <DealerChat />
       <DealerChat />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -40,7 +41,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: color.PRIMARY,
-    alignItems: 'center',
     paddingHorizontal: 15,
   },
 
