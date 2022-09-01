@@ -1,6 +1,14 @@
-import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import color from '../color/color';
+import CheckBox from './TestingScreen';
 
 const DetailPrefrenceScreen = ({navigation}) => {
   const [check, setCheck] = useState(false);
@@ -26,13 +34,51 @@ const DetailPrefrenceScreen = ({navigation}) => {
       <View style={styles.detergent}>
         <Text style={styles.detergentTitle}>Detergent:</Text>
         <View style={{flexWrap: 'wrap', flexDirection: 'row'}}>
-          <Text style={styles.item}>Tide</Text>
-          <Text style={styles.item}>Gain</Text>
-          <Text style={styles.item}>Hammer</Text>
-          <Text style={styles.item}>Arm</Text>
-          <Text style={styles.item}>Persil</Text>
-          <Text style={styles.item}>Cheer</Text>
-          <Text style={styles.item}>Purex</Text>
+          <TouchableOpacity
+            style={{flexDirection: 'row', alignItems: 'center'}}>
+            <CheckBox />
+            <Text style={styles.item}>Tide</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{flexDirection: 'row', alignItems: 'center'}}>
+            <CheckBox />
+            <Text style={styles.item}>Gain</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{flexDirection: 'row', alignItems: 'center'}}>
+            <CheckBox />
+            <Text style={styles.item}>Hammer</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{flexDirection: 'row', alignItems: 'center'}}>
+            <CheckBox />
+            <Text style={styles.item}>Arm</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{flexDirection: 'row', alignItems: 'center'}}>
+            <CheckBox />
+            <Text style={styles.item}>Persil</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{flexDirection: 'row', alignItems: 'center'}}>
+            <CheckBox />
+            <Text style={styles.item}>Cheer</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}>
+            <CheckBox />
+            <Text style={styles.item}>Purex</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -129,9 +175,10 @@ const styles = StyleSheet.create({
   },
   item: {
     color: '#fff',
+    marginLeft: 8,
     fontSize: 15,
     marginRight: 50,
-    marginTop: 20,
+    marginTop: 15,
     marginBottom: 15,
     fontFamily: 'Comfortaa Light',
   },

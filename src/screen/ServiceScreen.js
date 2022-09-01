@@ -10,6 +10,12 @@ import {
 } from 'react-native';
 import React from 'react';
 import color from '../color/color';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import Foundation from 'react-native-vector-icons/Foundation';
 // import {Spacer} from '../components';
 
 const ServiceScreen = ({navigation}) => {
@@ -22,21 +28,20 @@ const ServiceScreen = ({navigation}) => {
       <ImageBackground
         style={styles.mapImage}
         source={require('../assets/icons/Map.png')}
-        resizeMode="contain">
+        resizeMode="cover">
         <View
           style={{
             flexDirection: 'row',
             top: 50,
-            left: 20,
+            left: 15,
             alignItems: 'center',
           }}>
-          <TouchableOpacity onPress={onMenuPress}>
-            <Image
-              style={{marginRight: 10}}
-              source={require('../assets/icons/MenuIcon.png')}
-            />
-          </TouchableOpacity>
-
+          <Feather
+            name="menu"
+            size={22}
+            style={{marginRight: 10}}
+            onPress={onMenuPress}
+          />
           <View
             style={{
               flexDirection: 'row',
@@ -73,17 +78,19 @@ const ServiceScreen = ({navigation}) => {
             justifyContent: 'center',
             alignItems: 'center',
             flex: 1,
+            paddingBottom: 25,
           }}>
           <TouchableOpacity style={styles.DropOff}>
-            <Image source={require('../assets/icons/Location.png')} />
+            {/* <Image source={require('../assets/icons/Location.png')} /> */}
+            <EvilIcons name="location" style={{fontSize: 25, color: '#fff'}} />
 
             <Text style={styles.ServiceText}>Drop off</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.pickUp}>
-            <Image
-              style={styles.Bike}
-              source={require('../assets/icons/Bike.png')}
+            <MaterialIcons
+              name="electric-scooter"
+              style={{fontSize: 23, color: '#fff'}}
             />
             <Text style={styles.ServiceText}>Pick up / Delivery</Text>
           </TouchableOpacity>
@@ -100,33 +107,22 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  image: {
-    flex: 1,
-    height: 450,
-    width: 400,
-    left: 0,
-    top: -5,
-  },
   main: {
+    paddingTop: 25,
     flex: 1,
     backgroundColor: color.PRIMARY,
-    height: 200,
-    bottom: -35,
+    height: 180,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
   model: {
-    backgroundColor: color.PRIMARY,
-    height: 70,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
   chooseText: {
     color: '#fff',
-    // fontFamily: theme.fontFamilies.heading,
     fontFamily: 'Comfortaa Light',
     fontSize: 18,
-    top: 15,
     alignSelf: 'center',
   },
   DropOff: {
@@ -137,8 +133,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#fff',
     marginHorizontal: 5,
-    // paddingHorizontal: 25,
-    // paddingVertical: 20,
     borderRadius: 10,
     flexDirection: 'row',
   },
@@ -156,12 +150,8 @@ const styles = StyleSheet.create({
   ServiceText: {
     color: '#fff',
     fontSize: 15,
-    marginLeft: 10,
+    marginLeft: 5,
     fontFamily: 'Comfortaa Light',
-  },
-  Bike: {
-    height: 18,
-    width: 20,
   },
   searchLoc: {
     paddingVertical: 14,
@@ -169,11 +159,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Comfortaa Light',
   },
   mapImage: {
-    flex: 1,
-    height: 450,
-    width: 400,
-    left: 0,
-    top: -5,
+    height: 500,
   },
 });
 export default ServiceScreen;

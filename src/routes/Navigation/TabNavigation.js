@@ -37,47 +37,41 @@ const TabNavigation = () => {
       <Tab.Screen
         name="Home"
         component={ServiceScreen}
-        options={
-          {
-            // tabBarIcon: ({focused}) => (
-            //   <AntDesign
-            //     name="home"
-            //     size={30}
-            //     color={focused ? '#128197' : '#000'}
-            //   />
-            // ),
-          }
-        }
+        options={{
+          tabBarIcon: ({focused}) => (
+            <AntDesign
+              name="home"
+              size={30}
+              color={focused ? '#128197' : '#000'}
+            />
+          ),
+        }}
       />
       <Tab.Screen
         name="Order"
         component={OrderNavigation}
-        options={
-          {
-            // tabBarIcon: ({focused}) => (
-            //   <AntDesign
-            //     name="menuunfold"
-            //     size={30}
-            //     color={focused ? '#128197' : '#000'}
-            //   />
-            // ),
-          }
-        }
+        options={{
+          tabBarIcon: ({focused}) => (
+            <AntDesign
+              name="menuunfold"
+              size={30}
+              color={focused ? '#128197' : '#000'}
+            />
+          ),
+        }}
       />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
-        options={
-          {
-            // tabBarIcon: ({focused}) => (
-            //   <AntDesign
-            //     name="user"
-            //     size={30}
-            //     color={focused ? '#128197' : '#000'}
-            //   />
-            // ),
-          }
-        }
+        options={{
+          tabBarIcon: ({focused}) => (
+            <AntDesign
+              name="user"
+              size={30}
+              color={focused ? '#128197' : '#000'}
+            />
+          ),
+        }}
       />
     </Tab.Navigator>
   );

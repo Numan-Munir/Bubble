@@ -9,10 +9,7 @@ import {theme} from '../ui';
 const SigninScreen = ({navigation}) => {
   // Hooks
 
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
   const [mobile, setMobile] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   // Functions
@@ -85,31 +82,31 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#fff',
     alignSelf: 'center',
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   description: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 17,
     marginBottom: 45,
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   signupText: {
     alignSelf: 'center',
     color: '#fff',
     fontSize: 16,
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   account: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 15,
     marginTop: 40,
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   signin: {
     color: '#65B4CE',
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   signinTitle: {
     fontSize: 18,
@@ -124,6 +121,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 12,
     alignSelf: 'flex-end',
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
 });

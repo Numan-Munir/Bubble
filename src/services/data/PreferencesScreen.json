@@ -11,7 +11,7 @@
         "storeImage":"require('../../assets/images/storeImage.png')"
     },
       {
-      "id": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+      "id": "bd7acbea-c1b1-46c2-avd5-3ad53abb28ba",
        "adress":"1465 5th Avenue, New York, 10035, NY",
         "distance":"10 Miles",
         "time":"9am-9pm",
@@ -21,7 +21,7 @@
         "storeImage":"require('../assets/images/laundryRoom.png')"
     },
      {
-        "id": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+        "id": "bd7acbea-c1b1-46c2-aer5-3ad53abb28ba",
         "adress":"1465 5th Avenue, New York, 10035, NY",
         "distance":"10 Miles",
         "time":"9am-9pm",

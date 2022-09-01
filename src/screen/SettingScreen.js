@@ -4,7 +4,6 @@ import {
   View,
   Image,
   Switch,
-  TouchableHighlight,
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
@@ -16,8 +15,8 @@ const SettingScreen = ({navigation}) => {
 
   const [isEnabled, setIsEnabled] = useState();
   const [defaultStyle, setDefaultStyle] = useState();
-  const [show, setShow] = useState(false);
-  const [check, setCheck] = useState(false);
+  const [english, setEnglish] = useState(false);
+  const [spanish, setSpanish] = useState(false);
 
   // Functions
 
@@ -49,20 +48,26 @@ const SettingScreen = ({navigation}) => {
 
             <TouchableOpacity
               style={styles.outer}
-              onPress={() => setShow(pre => !pre)}>
-              {show ? <View style={styles.inner} /> : null}
+              onPress={() => {
+                setEnglish(true);
+                setSpanish(false);
+              }}>
+              {english ? <View style={styles.inner} /> : null}
             </TouchableOpacity>
           </TouchableOpacity>
 
           {/* Spanish */}
 
           <TouchableOpacity style={styles.english}>
-            <Text style={styles.englishTitle}>English</Text>
+            <Text style={styles.englishTitle}>Spanish</Text>
 
             <TouchableOpacity
               style={styles.outer}
-              onPress={() => setCheck(pre => !pre)}>
-              {check ? <View style={styles.inner} /> : null}
+              onPress={() => {
+                setSpanish(true);
+                setEnglish(false);
+              }}>
+              {spanish ? <View style={styles.inner} /> : null}
             </TouchableOpacity>
           </TouchableOpacity>
         </View>

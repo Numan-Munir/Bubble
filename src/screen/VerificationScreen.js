@@ -2,7 +2,8 @@ import {StyleSheet, Text, View, ScrollView, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import CustomButton from '../components/buttons/CustomButton';
 import color from '../color/color';
-import OTPInputView from '@twotalltotems/react-native-otp-input';
+import OTPTextInput from 'react-native-otp-textinput';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const VerificationScreen = ({navigation}) => {
   // Hooks
@@ -22,22 +23,13 @@ const VerificationScreen = ({navigation}) => {
         We’ve texted you with a code to verify your phone number
       </Text>
       {/* Input Field   */}
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          marginVertical: 40,
-        }}>
-        <TextInput style={styles.code} placeholder="_" maxLength={1} />
-        <TextInput style={styles.code} placeholder="_" maxLength={1} />
-        <TextInput style={styles.code} placeholder="_" maxLength={1} />
-        <TextInput style={styles.code} placeholder="_" maxLength={1} />
-        {/* <OTPInputView
-          pinCount={4}
-          onCodeFilled={code => setOtp(code)}
-          codeInputFieldStyle={styles.codeInputFieldStyle}
-        /> */}
-      </View>
+      <OTPTextInput
+        textInputStyle={styles.textStyle}
+        offTintColor="#08758B"
+        tintColor="#08758B"
+        containerStyle={styles.containerStyle}
+        handleTextChange={code => setOtp(code)}
+      />
 
       <CustomButton title={'Continue'} onPress={onBtnPress} />
 
@@ -45,6 +37,7 @@ const VerificationScreen = ({navigation}) => {
       <Text style={styles.signin} onPress={onResend}>
         RESEND
       </Text>
+      <AntDesign name="home" />
     </ScrollView>
   );
 };
@@ -62,36 +55,30 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginVertical: 30,
     marginTop: 45,
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   account: {
     color: '#fff',
     alignSelf: 'center',
     fontSize: 15,
     marginTop: 10,
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
   signin: {
     color: '#ABE9FE',
     alignSelf: 'center',
     marginTop: 20,
-    // fontFamily: 'Comfortaa Light',
+    fontFamily: 'Comfortaa Light',
   },
-  code: {
-    paddingVertical: 25,
-    paddingHorizontal: 30,
-    borderRadius: 50,
-    fontSize: 20,
+  textStyle: {
     backgroundColor: '#08758B',
-    marginHorizontal: 7,
-    // fontFamily: 'Comfortaa Light',
+    borderRadius: 50,
     color: '#fff',
+    marginHorizontal: 7,
+    height: 70,
+    width: 70,
   },
-  // codeInputFieldStyle: {
-  //   width: 60,
-  //   height: 60,
-  //   fontSize: 25,
-  //   borderRadius: 50,
-  //   color: '#fff',
-  // },
+  containerStyle: {
+    marginVertical: 40,
+  },
 });

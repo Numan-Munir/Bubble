@@ -9,11 +9,20 @@ const SignupScreen = ({navigation}) => {
   // Hooks
 
   const [fname, setFname] = useState('');
+  console.log('fname===??', fname);
   const [lname, setLname] = useState('');
+  console.log('lname===??', lname);
   const [mobile, setMobile] = useState('');
+  console.log('mobile===??', mobile);
   const [email, setEmail] = useState('');
+  console.log('email===??', email);
   const [password, setPassword] = useState('');
+  console.log('password===??', password);
 
+  // const setFirstName = text => {
+  //   setFname(text);
+  // };
+  // console.log('setFirstName===>>>', setFirstName);
   // Functions
 
   const onSgninPress = () => {
@@ -40,11 +49,12 @@ const SignupScreen = ({navigation}) => {
         placeholder={'First Name'}
         value={fname}
         setValue={setFname}
+        // setValue={text => setFname(console.warn(text))}
       />
       <CustomInput
         placeholder={'Last Name'}
         value={lname}
-        setValue={setLname}
+        setValue={text => setLname(text)}
       />
       <CustomInput
         placeholder={'Mobile Number'}

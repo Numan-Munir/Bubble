@@ -4,6 +4,11 @@ import color from '../color/color';
 import DealerDetail from '../components/DealerDetail/DealerDetail';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import DashedLine from 'react-native-dashed-line';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const OrderScreen = () => {
   return (
@@ -30,9 +35,14 @@ const OrderScreen = () => {
               justifyContent: 'flex-start',
               marginTop: 10,
             }}>
-            <Image
-              style={{height: 25, width: 20, top: 3, marginRight: 10}}
-              source={require('../assets/icons/File-checked.png')}
+            <AntDesign
+              name="filetext1"
+              style={{
+                fontSize: 20,
+                color: '#fff',
+                opacity: 0.9,
+                marginRight: 10,
+              }}
             />
             <Text
               style={{
@@ -52,10 +62,7 @@ const OrderScreen = () => {
               justifyContent: 'flex-start',
               marginTop: 10,
             }}>
-            <Image
-              style={styles.image}
-              source={require('../assets/icons/House-2.png')}
-            />
+            <AntDesign name="home" style={styles.icon} />
             <Text style={styles.same}>Thiam’s Laundramat</Text>
           </View>
 
@@ -65,10 +72,7 @@ const OrderScreen = () => {
               justifyContent: 'flex-start',
               marginTop: 20,
             }}>
-            <Image
-              style={styles.image}
-              source={require('../assets/icons/Location-point.png')}
-            />
+            <Ionicons name="location-outline" style={styles.icon} />
             <Text style={styles.same}>
               1465 5th Avenue, New York, 10035, NY
             </Text>
@@ -80,10 +84,7 @@ const OrderScreen = () => {
               justifyContent: 'flex-start',
               marginTop: 20,
             }}>
-            <Image
-              style={styles.image}
-              source={require('../assets/icons/Call-2.png')}
-            />
+            <Ionicons name="call-outline" style={styles.icon} />
             <Text style={styles.same}>645-390-3456</Text>
           </View>
         </View>
@@ -92,15 +93,23 @@ const OrderScreen = () => {
 
         <View style={styles.servicesDiv}>
           <View style={styles.services}>
-            <Image source={require('../assets/icons/Bike-2.png')} />
+            <MaterialIcons
+              name="electric-bike"
+              style={{fontSize: 25, color: '#fff'}}
+            />
             <Text style={styles.servicesTitle}>Pick-up on 10/30 @4.45 pm</Text>
           </View>
+
           <View style={styles.services}>
-            <Image source={require('../assets/icons/Bike-2.png')} />
+            <MaterialIcons
+              name="electric-bike"
+              style={{fontSize: 25, color: '#fff'}}
+            />
             <Text style={styles.servicesTitle}>Pick-up on 10/30 @4.45 pm</Text>
           </View>
+
           <View style={styles.services}>
-            <Image source={require('../assets/icons/DollarIcon.png')} />
+            <Feather name="dollar-sign" style={{fontSize: 25, color: '#fff'}} />
             <Text style={styles.servicesTitle}>
               Estimated Price 60$ (25 lb)
             </Text>
@@ -218,9 +227,11 @@ const styles = StyleSheet.create({
     opacity: 0.7,
     fontFamily: 'Comfortaa Light',
   },
-  image: {
-    top: 3,
+  icon: {
+    color: '#fff',
+    fontSize: 17,
     marginRight: 10,
+    opacity: 0.6,
   },
   footer: {
     justifyContent: 'center',
@@ -259,7 +270,7 @@ const styles = StyleSheet.create({
   num: {
     color: '#fff',
     fontSize: 15,
-    opacity: 0.6,
+    opacity: 0.7,
     fontFamily: 'Comfortaa Light',
   },
   // dotted: {
